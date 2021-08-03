@@ -2,6 +2,7 @@
 #include <asmjit/asmjit.h>
 #include <stdio.h>
 
+
 using namespace asmjit;
 
 // Signature of the generated function.
@@ -15,7 +16,7 @@ int basic()
   code.init(rt.environment());            // Initialize CodeHolder to match JIT environment.
 
   x86::Assembler a(&code);                // Create and attach x86::Assembler to `code`.
-  a.mov(x86::eax, 1);                     // Move one to 'eax' register.
+  a.mov(x86::rax, 1);                     // Move one to 'eax' register.
   a.ret();                                // Return from function.
   // ----> x86::Assembler is no longer needed from here and can be destroyed <----
 
